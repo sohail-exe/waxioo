@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Waxioo — We build high-converting websites for service businesses in the USA & UK. Fast, professional, and delivered in 3 days." />
+  <meta property="og:title" content="About Waxioo | Professional Web Design" />
+  <meta property="og:url" content="https://waxioo.com/about" />
+  <title>About Waxioo | Professional Web Design</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94SELJ5WSD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-94SELJ5WSD');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080808;
+      --white: #F5F3EE;
+      --white-pure: #ffffff;
+      --gray: #EDEAE4;
+      --gray2: #E0DDD6;
+      --muted: #6b6760;
+      --grid-line: rgba(0,0,0,0.07);
+      --max: 1100px;
+      --pad: 2rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Figtree', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Grid lines */
+    .grid-wrap { position: relative; }
+    .grid-line-left, .grid-line-right {
+      position: absolute; top: 0; bottom: 0; width: 1px;
+      background: var(--grid-line); pointer-events: none; z-index: 0;
+    }
+    .grid-line-left  { left: calc((100% - var(--max)) / 2); }
+    .grid-line-right { right: calc((100% - var(--max)) / 2); }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 3rem); max-width: var(--max); z-index: 1000;
+      background: rgba(255,255,255,0.88); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px; padding: 0.6rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; padding: 0.4rem 0.9rem; border-radius: 100px; transition: all 0.15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--black); background: var(--gray); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; font-weight: 600 !important; padding: 0.5rem 1.2rem !important; }
+    .nav-cta:hover { background: #333 !important; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .menu-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all 0.3s; }
+
+    /* HERO */
+    .hero {
+      padding: 10rem var(--pad) 6rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 800; line-height: 1.08;
+      letter-spacing: -0.03em; margin-bottom: 2rem;
+    }
+
+    .hero h1 em { font-style: italic; }
+
+    .hero-lead {
+      font-size: 1.2rem; color: var(--muted); line-height: 1.7;
+      max-width: 640px; margin-bottom: 2.5rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+
+    .stat-card {
+      background: var(--white-pure);
+      padding: 2rem;
+    }
+
+    .stat-num {
+      font-size: 2.8rem; font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem; color: var(--muted); font-weight: 500; line-height: 1.4;
+    }
+
+    /* SECTIONS */
+    .section { padding: 6rem 0; position: relative; }
+
+    .section-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad); position: relative; z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .section-sub {
+      color: var(--muted); font-size: 1.05rem;
+      max-width: 560px; line-height: 1.6; margin-bottom: 3rem;
+    }
+
+    /* STORY SECTION */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .story-text p {
+      font-size: 1.05rem; color: var(--muted);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+
+    .story-text p strong { color: var(--black); font-weight: 700; }
+
+    .story-card {
+      background: var(--gray);
+      border: 1.5px solid var(--gray2);
+      border-radius: 24px;
+      padding: 2.5rem;
+    }
+
+    .story-card-quote {
+      font-size: 1.2rem; font-weight: 700;
+      line-height: 1.5; letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .story-card-author {
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--black); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; flex-shrink: 0;
+    }
+
+    .author-name { font-size: 0.95rem; font-weight: 700; }
+    .author-title { font-size: 0.82rem; color: var(--muted); }
+
+    /* VALUES */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .value-card {
+      background: var(--white-pure);
+      padding: 2.5rem;
+    }
+
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+    .value-card h3 {
+      font-size: 1.15rem; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 0.6rem;
+    }
+
+    .value-card p {
+      font-size: 0.92rem; color: var(--muted);
+      line-height: 1.6; margin: 0;
+    }
+
+    /* PROCESS */
+    .process-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .process-item {
+      background: var(--white-pure);
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: background 0.15s;
+    }
+
+    .process-item:hover { background: var(--gray); }
+
+    .process-num {
+      font-size: 2.5rem; font-weight: 800;
+      color: var(--gray2); font-style: italic;
+      letter-spacing: -0.03em; line-height: 1;
+    }
+
+    .process-content h3 {
+      font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 0.4rem; letter-spacing: -0.02em;
+    }
+
+    .process-content p {
+      font-size: 0.92rem; color: var(--muted);
+      line-height: 1.6; margin: 0;
+    }
+
+    /* WHO WE SERVE */
+    .niches-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .niche-card {
+      border: 1.5px solid var(--gray2);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .niche-card:hover {
+      border-color: #ccc;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .niche-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .niche-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .niche-card p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    /* TRUST BADGES */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .trust-card {
+      background: var(--white-pure);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .trust-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .trust-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .trust-card p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.4; }
+
+    /* CTA BOTTOM */
+    .cta-section {
+      background: var(--black); color: var(--white);
+      padding: 6rem 0; text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800;
+      letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--white);
+    }
+
+    .cta-section h2 em { font-style: italic; }
+
+    .cta-section p { color: rgba(255,255,255,0.5); font-size: 1.05rem; margin-bottom: 2.5rem; }
+
+    .cta-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border-radius: 100px; font-size: 0.95rem;
+      font-weight: 600; text-decoration: none; transition: all 0.15s ease;
+      white-space: nowrap; font-family: inherit; cursor: pointer; border: none;
+    }
+
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: #eee; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.2); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+    .btn-black { background: var(--black); color: var(--white); }
+    .btn-black:hover { background: #222; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--gray2); }
+    .btn-outline:hover { background: var(--gray); }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--gray2); padding: 3rem 0; }
+    .footer-inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    }
+    .footer-brand h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .footer-brand p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .footer-col h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { text-decoration: none; font-size: 0.9rem; color: var(--black); transition: color 0.15s; }
+    .footer-col ul li a:hover { color: var(--muted); }
+    .footer-col ul li { font-size: 0.9rem; color: var(--black); }
+    .footer-bottom {
+      max-width: var(--max); margin: 2rem auto 0; padding: 1.5rem var(--pad) 0;
+      border-top: 1px solid var(--gray2); display: flex;
+      justify-content: space-between; align-items: center;
+      font-size: 0.82rem; color: var(--muted);
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa-float {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999;
+      width: 52px; height: 52px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 28px; height: 28px; }
+    .wa-tooltip {
+      position: absolute; right: 60px; background: var(--black); color: var(--white);
+      font-size: 0.78rem; font-weight: 600; padding: 0.4rem 0.8rem;
+      border-radius: 8px; white-space: nowrap; opacity: 0;
+      pointer-events: none; transition: opacity 0.2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+      .nav-links.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0; right: 0;
+  background: var(--white-pure);
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  z-index: 1001;
+  list-style: none;
+  border-radius: 16px;
+  border: 1px solid var(--gray2);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+      .nav-links.active a { font-size: 1.2rem; padding: 0.6rem 1.5rem; }
+      .hero { padding: 7rem var(--pad) 3rem; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .niches-grid { grid-template-columns: 1fr 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-item { grid-template-columns: 50px 1fr; gap: 1rem; }
+      .section { padding: 4rem 0; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .grid-line-left, .grid-line-right { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .niches-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .section-inner { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="header">
+    <a href="/" class="nav-logo"><img src="../images/waxio-logo.jpg" alt="Waxioo"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/" class="active">About</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/contact/" class="nav-cta">Get My Website →</a></li>
+    </ul>
+  </nav>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/447534718384?text=Hi!%20I'm%20interested%20in%20a%20business%20website" class="wa-float" target="_blank" rel="noopener">
+    <span class="wa-tooltip">Chat — We reply within 1 hour</span>
+    <img src="../images/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- HERO -->
+  <div class="grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="hero">
+      <div class="hero-eyebrow reveal">About Waxioo</div>
+      <h1 class="reveal delay-1">We build websites that<br><em>actually get customers</em></h1>
+      <p class="hero-lead reveal delay-2">We're a remote web design team working with service businesses across the USA, UK, and Europe. Our mission is simple: build you a website so good that your competitors wonder what changed.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;" class="reveal delay-3">
+        <a href="/contact/" class="btn btn-black">Get My Website in 3 Days →</a>
+        <a href="https://wa.me/447534718384" class="btn btn-outline" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z" fill="currentColor"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- STATS -->
+      <div class="hero-stats reveal delay-3">
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Days to deliver your complete website</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$397</div>
+          <div class="stat-label">Starting price — no hidden fees ever</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Days a week we're available to support you</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Satisfaction guarantee on every project</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="section grid-wrap" style="background: var(--gray);">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="story-grid">
+        <div class="story-text">
+          <div class="eyebrow reveal">Our story</div>
+          <h2 class="section-title reveal delay-1">Built for businesses that <em>deserve better</em></h2>
+          <p class="reveal delay-2">We started Waxioo after watching too many good businesses lose customers simply because their website was outdated, slow, or nonexistent. A great plumber, cleaner, or restaurant shouldn't have to compete with a bad website.</p>
+          <p class="reveal delay-2"><strong>So we fixed that.</strong> We built a process that delivers professional, high-converting websites fast — without the agency price tag or the 6-week wait. Every website we build is designed with one goal: getting you more customers.</p>
+          <p class="reveal delay-3">We work with businesses across the USA, UK, and Europe entirely remotely. Our team is available 6 days a week via WhatsApp and email. You'll always have a real person to speak to — not a ticketing system.</p>
+        </div>
+        <div class="story-card reveal delay-2">
+          <div class="story-card-quote">"Most businesses don't have a marketing problem. They have a first impression problem. A great website fixes that overnight."</div>
+          <div class="story-card-author">
+            <div class="author-avatar">W</div>
+            <div>
+              <div class="author-name">The Waxioo Team</div>
+              <div class="author-title">Web Design & Digital Growth</div>
+            </div>
+          </div>
+          <div style="height:1px;background:var(--gray2);margin:1.5rem 0;"></div>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;">
+              <span style="color:#22c55e;font-size:1rem;">✓</span>
+              <span style="color:var(--muted);">Websites delivered in <strong style="color:var(--black);">3 days</strong></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;">
+              <span style="color:#22c55e;font-size:1rem;">✓</span>
+              <span style="color:var(--muted);">Available via <strong style="color:var(--black);">WhatsApp 6 days/week</strong></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;">
+              <span style="color:#22c55e;font-size:1rem;">✓</span>
+              <span style="color:var(--muted);">Working with clients in <strong style="color:var(--black);">USA, UK & Europe</strong></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;">
+              <span style="color:#22c55e;font-size:1rem;">✓</span>
+              <span style="color:var(--muted);"><strong style="color:var(--black);">100% satisfaction</strong> guarantee — always</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">What we believe</div>
+      <h2 class="section-title reveal delay-1">The principles behind <em>every website we build</em></h2>
+      <p class="section-sub reveal delay-2">We don't just build websites. We build customer-winning machines. Here's what drives every decision we make.</p>
+      <div class="values-grid reveal delay-2">
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Speed is everything</h3>
+          <p>Not just website loading speed — the speed of delivery. You shouldn't wait 6 weeks for a website. We deliver in 3 days because your business can't afford to wait.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></div>
+          <h3>Design serves results</h3>
+          <p>Beautiful is worthless if it doesn't convert. Every design decision we make is driven by one question: will this get the client more customers? If not, it doesn't make the cut.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Honest relationships</h3>
+          <p>No hidden fees. No upsells you don't need. No vague promises. We tell you exactly what you're getting, what it costs, and what result to expect. That's it.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <h3>Mobile first, always</h3>
+          <p>Over 70% of your customers will visit on a phone. We build mobile-first every time — not as an afterthought, but as the starting point of every design.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>Built to be found</h3>
+          <p>A website nobody can find is just a digital business card. We bake local SEO into every build so Google shows you to customers who are actively searching for what you offer.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Real human support</h3>
+          <p>You'll always speak to a real person. No ticketing systems, no bots, no waiting days for a reply. We're on WhatsApp 6 days a week and we respond within the hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROCESS -->
+  <section class="section" style="background: var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">How we work</div>
+      <h2 class="section-title reveal delay-1">From first message to <em>live website</em> in 3 days</h2>
+      <p class="section-sub reveal delay-2">A process so simple, most clients are surprised when it's already done.</p>
+      <div class="process-list reveal delay-2">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3>You reach out</h3>
+            <p>Message us on WhatsApp or fill in the contact form. We'll ask a few quick questions about your business, your services, and your goals. This takes about 10 minutes.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3>You send us your content</h3>
+            <p>Send over your logo, photos, and a description of your services. Don't have professional photos? No problem — we can work with what you have and advise on what's needed.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3>We design & build</h3>
+            <p>Our team gets to work. Your website is custom-designed for your industry, built with local SEO from day one, and optimised for mobile. We handle everything technical.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h3>You review & request changes</h3>
+            <p>We share a preview link. You review it, give feedback, and we make any tweaks. Every package includes a full revision round — we don't stop until you're happy.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h3>We launch & you start winning</h3>
+            <p>We go live. Your business is now visible on Google, bookable online, and ready to convert visitors into paying customers — 24 hours a day, 7 days a week.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">Who we help</div>
+      <h2 class="section-title reveal delay-1">Built for <em>service businesses</em> that mean business</h2>
+      <p class="section-sub reveal delay-2">We specialise in industries where a great website directly translates to more bookings, more calls, and more revenue.</p>
+      <div class="niches-grid">
+        <div class="niche-card reveal delay-1" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><line x1="12" y1="16" x2="12" y2="16"/></svg></div>
+          <h3>Car Washes &amp; Auto Detailing</h3>
+          <p>Show up when locals search "car wash near me". Get your booking calendar full every single week.</p>
+        </div>
+        <div class="niche-card reveal delay-2" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Cleaning Companies</h3>
+          <p>Look established and trustworthy before a customer even calls. Win more residential and commercial contracts.</p>
+        </div>
+        <div class="niche-card reveal delay-3" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Real Estate Agents</h3>
+          <p>Capture property leads 24/7 with a site built to convert. Never miss an enquiry again.</p>
+        </div>
+        <div class="niche-card reveal delay-1" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3>Restaurants &amp; Food</h3>
+          <p>Elegant menus, online reservations, and a Google presence that fills tables every night.</p>
+        </div>
+        <div class="niche-card reveal delay-2" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Law Firms</h3>
+          <p>A professional website that builds trust before the first consultation. Convert more website visitors into retained clients.</p>
+        </div>
+        <div class="niche-card reveal delay-3" style="background: var(--white-pure);">
+          <div class="niche-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Med Spas &amp; Salons</h3>
+          <p>Showcase your services beautifully and let customers book appointments online at any time of day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section class="section" style="background: var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">Why businesses trust us</div>
+      <h2 class="section-title reveal delay-1">No fluff. <em>Just results.</em></h2>
+      <div class="trust-grid reveal delay-2" style="margin-top:2.5rem;">
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h3>3-Day Delivery</h3>
+          <p>From payment to live website in 72 hours. Always on time, always as promised.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>No Hidden Fees</h3>
+          <p>The price you see is the price you pay. No surprise invoices after delivery.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Satisfaction Guarantee</h3>
+          <p>We revise until you're 100% happy. Your satisfaction is non-negotiable to us.</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.5 6.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>Real Human Support</h3>
+          <p>WhatsApp and email support 6 days a week. A real person always responds within 1 hour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2 class="reveal">Ready to get more customers?<br><em>Let's build your website.</em></h2>
+      <p class="reveal delay-1">Join businesses across the USA and UK who chose Waxioo to win online.</p>
+      <div class="cta-buttons reveal delay-2">
+        <a href="/contact/" class="btn btn-white">Get My Website in 3 Days →</a>
+        <a href="https://wa.me/447534718384" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Waxioo</h3>
+        <p>Professional website design for service businesses in the USA, UK & Europe. Built to convert visitors into customers.</p>
+        <div style="display:flex;gap:0.75rem;align-items:center;">
+          <a href="https://www.facebook.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:0.85rem;">Facebook</a>
+          <a href="https://www.instagram.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:0.85rem;">Instagram</a>
+          <a href="https://x.com/waxio0" target="_blank" rel="noopener" style="color:var(--muted);font-size:0.85rem;">Twitter/X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/">Business Websites</a></li>
+          <li><a href="/services/">E-commerce Stores</a></li>
+          <li><a href="/services/">SEO Optimisation</a></li>
+          <li><a href="/services/">Hosting & Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.5 6.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +44 7534 718384</li>
+          <li><a href="https://wa.me/447534718384" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><a href="/contact/">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Waxioo. All rights reserved.</div>
+      <div>Professional Website Design & Development</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    function closeMenu() {
+      if (menu) { menu.classList.remove('active'); document.body.style.overflow = ''; }
+    }
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    }
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

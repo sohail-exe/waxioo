@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get a high-converting website for your service business. Built in 3 days, starting at $397. Mobile-responsive, SEO-optimised, and delivered fast." />
+  <meta name="keywords" content="website design, website development, business website, professional web design, custom website, small business website" />
+  <meta property="og:title" content="Waxioo | Websites That Win Customers" />
+  <meta property="og:description" content="Get a high-converting website for your service business. Built in 3 days, starting at $397." />
+  <meta property="og:url" content="https://waxioo.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Waxioo | Websites That Win Customers</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="google-site-verification" content="google6d88c57a5e858270" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94SELJ5WSD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-94SELJ5WSD');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #080808;
+      --white: #F5F3EE;
+      --white-pure: #ffffff;
+      --gray: #EDEAE4;
+      --gray2: #E0DDD6;
+      --muted: #6b6760;
+      --accent: #000;
+      --grid-line: rgba(0,0,0,0.07);
+      --max: 1100px;
+      --pad: 2rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Figtree', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* ── GRID LINES ── */
+    .grid-wrap { position: relative; }
+    .grid-line-left,
+    .grid-line-right {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--grid-line);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .grid-line-left  { left: calc((100% - var(--max)) / 2); }
+    .grid-line-right { right: calc((100% - var(--max)) / 2); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      max-width: var(--max);
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      transition: all 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--black); background: var(--gray); }
+
+    .nav-cta {
+      background: var(--black) !important;
+      color: var(--white) !important;
+      font-weight: 600 !important;
+      padding: 0.5rem 1.2rem !important;
+    }
+
+    .nav-cta:hover { background: #333 !important; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1002;
+      position: relative;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem var(--pad) 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .hero-left h1 em {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-left p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-black { background: var(--black); color: var(--white); }
+    .btn-black:hover { background: #222; transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: 1.5px solid var(--gray2);
+    }
+    .btn-outline:hover { background: var(--gray); border-color: #ccc; }
+
+    .trust-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .trust-item .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+
+    /* Hero card */
+    .hero-card {
+      background: var(--white-pure);
+      border: 1.5px solid var(--gray2);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    }
+
+    .hero-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gray);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
+    }
+
+    .hero-card h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card h2 span { color: var(--muted); }
+
+    .hero-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-card .btn { width: 100%; justify-content: center; border-radius: 12px; padding: 0.9rem; }
+
+    .card-divider {
+      height: 1px;
+      background: var(--gray2);
+      margin: 1.5rem 0;
+    }
+
+    .card-call {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--black);
+      padding: 0.9rem 1.1rem;
+      border: 1.5px solid var(--gray2);
+      border-radius: 12px;
+      transition: all 0.15s;
+    }
+
+    .card-call:hover { background: var(--gray); }
+
+    .card-call-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .card-call-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .card-call-text { font-size: 0.9rem; font-weight: 600; }
+    .card-call-sub { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+
+    /* ── MARQUEE ── */
+    .marquee-section {
+      border-top: 1px solid var(--gray2);
+      border-bottom: 1px solid var(--gray2);
+      padding: 1rem 0;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0.75rem;
+      animation: marquee 25s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .pill {
+      background: var(--gray);
+      border: 1px solid var(--gray2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-title em { font-style: italic; }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .why-card {
+      background: var(--white-pure);
+      padding: 2.5rem;
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .why-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .why-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      border: 1.5px solid var(--gray2);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+      border-color: #ccc;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .benefit-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .benefit-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .hiw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray2);
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .hiw-card {
+      background: var(--white-pure);
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .hiw-num {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gray2);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+      letter-spacing: -0.03em;
+    }
+
+    .hiw-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hiw-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .pricing-card {
+      border: 1.5px solid var(--gray2);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-price span {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.6;
+    }
+
+    .pricing-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.5); }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .pricing-features li::before {
+      content: "✓";
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+      opacity: 0.5;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 0.85rem;
+    }
+
+    .pricing-card.featured .btn { background: var(--white); color: var(--black); }
+    .pricing-card.featured .btn:hover { background: #eee; }
+
+    .pricing-card:not(.featured) .btn {
+      background: transparent;
+      border: 1.5px solid var(--gray2);
+      color: var(--black);
+    }
+    .pricing-card:not(.featured) .btn:hover { background: var(--gray); }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .testi-card {
+      border: 1.5px solid var(--gray2);
+      border-radius: 16px;
+      padding: 1.8rem;
+      background: var(--white-pure);
+    }
+
+    .testi-stars {
+      color: #f59e0b;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .testi-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--black);
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .testi-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .testi-name { font-size: 0.88rem; font-weight: 700; }
+    .testi-biz { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; }
+
+    .faq-item { border-bottom: 1px solid var(--gray2); }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 1.4rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: var(--black);
+      transition: color 0.15s;
+    }
+
+    .faq-q:hover { color: #444; }
+
+    .faq-arrow {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      opacity: 0.4;
+    }
+
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+    .faq-a {
+      display: none;
+      padding-bottom: 1.4rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-section {
+      background: var(--black);
+      color: var(--white);
+      padding: 6rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .cta-section h2 em { font-style: italic; }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.5);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: #eee; transform: translateY(-1px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.2);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--gray2);
+      padding: 3rem 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .footer-col ul li a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--black);
+      transition: color 0.15s;
+    }
+
+    .footer-col ul li a:hover { color: var(--muted); }
+    .footer-col ul li { font-size: 0.9rem; color: var(--black); }
+
+    .footer-bottom {
+      max-width: var(--max);
+      margin: 2rem auto 0;
+      padding: 1.5rem var(--pad) 0;
+      border-top: 1px solid var(--gray2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      width: 52px; height: 52px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 28px; height: 28px; }
+
+    .wa-tooltip {
+      position: absolute;
+      right: 60px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+
+     .nav-links.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0; right: 0;
+  background: var(--white-pure);
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  z-index: 1001;
+  list-style: none;
+  border-radius: 16px;
+  border: 1px solid var(--gray2);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+      .nav-links.active a { font-size: 1.2rem; padding: 0.6rem 1.5rem; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-top: 6rem; padding-bottom: 3rem; }
+      .hero-left h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); }
+      .hero-card { padding: 1.8rem; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; justify-content: center; }
+      .why-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .hiw-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .section { padding: 4rem 0; }
+      .faq-list { margin-top: 0; }
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .grid-line-left, .grid-line-right { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .trust-row { gap: 0.75rem; }
+      .section-inner { padding: 0 1.25rem; }
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="header">
+    <a href="/" class="nav-logo"><img src="images/waxio-logo.jpg" alt="Waxioo"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="about/">About</a></li>
+      <li><a href="services/">Services</a></li>
+      <li><a href="contact/">Contact</a></li>
+      <li><a href="contact/" class="nav-cta">Get My Website →</a></li>
+    </ul>
+  </nav>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/447534718384?text=Hi!%20I'm%20interested%20in%20a%20business%20website" class="wa-float" target="_blank" rel="noopener">
+    <span class="wa-tooltip">Chat — We reply within 1 hour</span>
+    <img src="images/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- HERO -->
+  <section class="hero grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1 class="reveal">Websites that <em>win customers</em> for your business</h1>
+        <p class="reveal delay-1">Built in 3 days, starting at $397. High-converting, mobile-ready websites for service businesses in the USA &amp; UK. Stand out. Get booked.</p>
+        <div class="hero-buttons reveal delay-2">
+          <a href="contact/" class="btn btn-black">Get My Website in 3 Days →</a>
+          <a href="#pricing" class="btn btn-outline">See pricing</a>
+        </div>
+        <div class="trust-row reveal delay-3">
+          <div class="trust-item"><span class="dot"></span> Delivered in 3 days</div>
+          <div class="trust-item"><span class="dot"></span> Starting at $397</div>
+          <div class="trust-item"><span class="dot"></span> 100% satisfaction</div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal delay-2">
+        <div class="hero-card-badge">
+          <span class="badge-dot"></span>
+          Start today
+        </div>
+        <h2>Join<br><span>Waxioo</span></h2>
+        <p>One package to get your business online and winning.</p>
+        <a href="#pricing" class="btn btn-black">See pricing</a>
+        <div class="card-divider"></div>
+        <a href="https://wa.me/447534718384" class="card-call" target="_blank" rel="noopener">
+          <div class="card-call-left">
+            <div class="card-call-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z" fill="#25d366"/></svg>
+            </div>
+            <div>
+              <div class="card-call-text">Book a free 15-min call</div>
+              <div class="card-call-sub">Chat on WhatsApp — We reply within 1 hour</div>
+            </div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="pill">Restaurant Websites</span>
+      <span class="pill">Real Estate</span>
+      <span class="pill">Cleaning Companies</span>
+      <span class="pill">Car Washes</span>
+      <span class="pill">Law Firms</span>
+      <span class="pill">Med Spas</span>
+      <span class="pill">Contractors</span>
+      <span class="pill">E-commerce Stores</span>
+      <span class="pill">Plumbers</span>
+      <span class="pill">Salons & Beauty</span>
+      <span class="pill">Coaching & Consulting</span>
+      <span class="pill">Fitness Studios</span>
+      <span class="pill">Restaurant Websites</span>
+      <span class="pill">Real Estate</span>
+      <span class="pill">Cleaning Companies</span>
+      <span class="pill">Car Washes</span>
+      <span class="pill">Law Firms</span>
+      <span class="pill">Med Spas</span>
+      <span class="pill">Contractors</span>
+      <span class="pill">E-commerce Stores</span>
+      <span class="pill">Plumbers</span>
+      <span class="pill">Salons & Beauty</span>
+      <span class="pill">Coaching & Consulting</span>
+      <span class="pill">Fitness Studios</span>
+    </div>
+  </div>
+
+  <!-- WHY YOU NEED A WEBSITE -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">Why it matters</div>
+      <h2 class="section-title reveal delay-1">The way websites <em>should've</em><br>been done all along</h2>
+      <p class="section-sub reveal delay-2">Most business websites are slow, ugly, and built to impress nobody. We build sites that actually convert visitors into paying customers.</p>
+      <div class="why-grid reveal delay-2">
+        <div class="why-card">
+          <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>Get Found on Google</h3>
+          <p>69% of customers search online before visiting a business. Without a website, you're invisible — and losing customers to competitors every single day.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <h3>Online Booking 24/7</h3>
+          <p>Let customers book appointments instantly — even at midnight. No phone calls, no back-and-forth. Your calendar fills itself.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Dominate Local Search</h3>
+          <p>Appear on Google Maps and rank for "services near me" searches. Be the first name customers see when they're ready to buy.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h3>Look More Professional</h3>
+          <p>A modern, fast, mobile-perfect website makes you look established and trustworthy before a customer even calls. First impressions win deals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section" style="background: var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">What's included</div>
+      <h2 class="section-title reveal delay-1">It's <em>"you'll never go back"</em> better</h2>
+      <p class="section-sub reveal delay-2">Every Waxioo website comes fully loaded. No hidden extras. No surprise fees.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal delay-1">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>Lightning Fast Loading</h3>
+          <p>Optimised code means your site loads in under 2 seconds — Google rewards it, customers love it.</p>
+        </div>
+        <div class="benefit-card reveal delay-2">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <h3>Mobile Responsive</h3>
+          <p>Looks perfect on every phone, tablet, and desktop. Over 70% of visitors are on mobile.</p>
+        </div>
+        <div class="benefit-card reveal delay-3">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+          <h3>Custom Design</h3>
+          <p>No templates. Every site is designed specifically for your brand, your industry, your customers.</p>
+        </div>
+        <div class="benefit-card reveal delay-1">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <h3>Online Booking Form</h3>
+          <p>An integrated booking form that notifies you instantly when a customer wants to hire you.</p>
+        </div>
+        <div class="benefit-card reveal delay-2">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>SEO Optimised</h3>
+          <p>Built-in local SEO so you rank for searches like "plumber near me" or "best car wash in [city]".</p>
+        </div>
+        <div class="benefit-card reveal delay-3">
+          <div class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><line x1="12" y1="16" x2="12" y2="16"/></svg></div>
+          <h3>Delivered in 3 Days</h3>
+          <p>Not weeks. Not months. Your complete website is live and ready to win customers in just 72 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">How it works</div>
+      <h2 class="section-title reveal delay-1">Simple. Fast. <em>Done.</em></h2>
+      <p class="section-sub reveal delay-2">Three steps from "I need a website" to "I'm getting customers."</p>
+      <div class="hiw-grid reveal delay-2">
+        <div class="hiw-card">
+          <div class="hiw-num">01</div>
+          <h3>Share Your Details</h3>
+          <p>Tell us about your business, your services, and your customers. Send over your photos and logo. That's it from your side.</p>
+        </div>
+        <div class="hiw-card">
+          <div class="hiw-num">02</div>
+          <h3>We Design & Build</h3>
+          <p>Our team builds your custom website with SEO and conversions in mind. Mobile-first, fast-loading, and made for your industry.</p>
+        </div>
+        <div class="hiw-card">
+          <div class="hiw-num">03</div>
+          <h3>Review & Launch</h3>
+          <p>We review it together, make any tweaks you want, and launch your site live. From start to customers in just 3 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing" style="background: var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">Pricing</div>
+      <h2 class="section-title reveal delay-1">One payment, <em>endless customers</em></h2>
+      <p class="section-sub reveal delay-2">All packages include 1 round of revisions. No hidden fees. Hosting available for $49/month.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal delay-1">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$397 <span>/one-time</span></div>
+          <div class="pricing-desc">Best for brand new businesses just starting out.</div>
+          <ul class="pricing-features">
+            <li>3-page website</li>
+            <li>Mobile responsive</li>
+            <li>Contact form</li>
+            <li>Basic SEO</li>
+            <li>Delivered in 3 days</li>
+          </ul>
+          <a href="contact/" class="btn">Get started</a>
+        </div>
+
+        <div class="pricing-card featured reveal delay-2">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-name">Growth</div>
+          <div class="pricing-price">$697 <span>/one-time</span></div>
+          <div class="pricing-desc">Best for service businesses wanting more bookings.</div>
+          <ul class="pricing-features">
+            <li>5-page website</li>
+            <li>Mobile responsive</li>
+            <li>Online booking system</li>
+            <li>Local SEO optimisation</li>
+            <li>Google Maps integration</li>
+            <li>SSL certificate included</li>
+            <li>Delivered in 3 days</li>
+          </ul>
+          <a href="contact/" class="btn">Get started</a>
+        </div>
+
+        <div class="pricing-card reveal delay-3">
+          <div class="pricing-name">Premium</div>
+          <div class="pricing-price">$1,197 <span>/one-time</span></div>
+          <div class="pricing-desc">Best for businesses serious about growth.</div>
+          <ul class="pricing-features">
+            <li>7-page website</li>
+            <li>Everything in Growth</li>
+            <li>E-commerce (up to 20 products)</li>
+            <li>Advanced SEO setup</li>
+            <li>Google Analytics</li>
+            <li>1 month free maintenance</li>
+            <li>Priority support</li>
+            <li>Delivered in 5 days</li>
+          </ul>
+          <a href="contact/" class="btn">Get started</a>
+        </div>
+      </div>
+      <p class="pricing-note reveal">Not sure which plan? <a href="https://wa.me/447534718384" style="color:var(--black);font-weight:600;">Chat with us on WhatsApp</a> — we'll recommend the right one for you.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">What clients say</div>
+      <h2 class="section-title reveal delay-1">Real results, <em>real businesses</em></h2>
+      <div class="testimonials-grid" style="margin-top:2.5rem;">
+        <div class="testi-card reveal delay-1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"We went from zero online presence to ranking #1 for 'cleaning service Austin' in 6 weeks. Booked 14 new clients in the first month alone."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MR</div>
+            <div>
+              <div class="testi-name">Marcus Reynolds</div>
+              <div class="testi-biz">Reynolds Cleaning Co., Texas</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal delay-2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Delivered in 3 days exactly as promised. The booking form alone doubled our appointment rate. Customers tell us they chose us because our website looked so professional."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">SJ</div>
+            <div>
+              <div class="testi-name">Sarah Jenkins</div>
+              <div class="testi-biz">Elite Wellness Spa, California</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal delay-3">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"We were getting maybe 2 enquiries a week from word of mouth. Now we get 10–15 from the website every week. Best $697 we've ever spent on the business."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">DT</div>
+            <div>
+              <div class="testi-name">David Thompson</div>
+              <div class="testi-biz">Thompson Legal Group, Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal delay-1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"I was sceptical but the results speak for themselves. Tripled our monthly bookings within 8 weeks. The team was responsive and delivered exactly what they promised."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AL</div>
+            <div>
+              <div class="testi-name">Amanda Lewis</div>
+              <div class="testi-biz">Crystal Clean Auto, Arizona</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal delay-2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Super fast, looks amazing on mobile, and they actually understood what a plumbing business needs. Got our first lead from the website on day 2 after launch."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RC</div>
+            <div>
+              <div class="testi-name">Robert Chen</div>
+              <div class="testi-biz">Chen Plumbing Services, New York</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal delay-3">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Ranking #1 for 'eco cleaning services Atlanta' within 2 months. Consistent new clients every week. The local SEO they built in is genuinely impressive."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AW</div>
+            <div>
+              <div class="testi-name">Amanda Wilson</div>
+              <div class="testi-biz">Eco Green Solutions, Georgia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--gray);">
+    <div class="section-inner">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
+        <div>
+          <div class="eyebrow reveal">FAQ</div>
+          <h2 class="section-title reveal delay-1"><em>Frequently</em> asked questions</h2>
+          <p class="section-sub reveal delay-2">Still have questions? <a href="https://wa.me/447534718384" style="color:var(--black);font-weight:600;">Chat with us on WhatsApp.</a> We reply within 1 hour.</p>
+        </div>
+        <div class="faq-list reveal delay-2">
+          <div class="faq-item open">
+            <button class="faq-q" onclick="toggleFaq(this)">How fast will I get my website?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Most websites are delivered in just 3 days. Larger Premium packages take up to 5 days. We've never missed a deadline.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do I need to provide anything?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Just your business name, logo (if you have one), photos, and a description of your services. We handle everything else — copy, design, SEO, and launch.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What if I don't like the design?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">No problem. Every package includes a revision round. We don't stop until you're 100% happy with the result.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is hosting included?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Hosting is available for $49/month, which includes SSL, maintenance, and technical support. You can also host elsewhere — we'll hand over all files.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside the USA?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Yes! We work with businesses across the USA, UK, and Europe. Our remote team is available 6 days a week via WhatsApp, email, and video call.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How do I get started?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Click "Get My Website" or message us on WhatsApp. We'll ask a few quick questions and get started within 24 hours.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2 class="reveal">See if Waxioo is right for you<br><em>(it totally is)</em></h2>
+      <p class="reveal delay-1">Get a professional website that attracts customers and fills your booking schedule.</p>
+      <div class="cta-buttons reveal delay-2">
+        <a href="contact/" class="btn btn-white">Get My Website in 3 Days →</a>
+        <a href="https://wa.me/447534718384" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Waxioo</h3>
+        <p>Professional website design for service businesses in the USA, UK & Europe. Built to convert visitors into customers.</p>
+        <div style="display:flex;gap:0.75rem;align-items:center;">
+          <a href="https://www.facebook.com/waxiooo" target="_blank" rel="noopener" aria-label="Facebook" style="color:var(--muted);font-size:0.85rem;">Facebook</a>
+          <a href="https://www.instagram.com/waxiooo" target="_blank" rel="noopener" aria-label="Instagram" style="color:var(--muted);font-size:0.85rem;">Instagram</a>
+          <a href="https://x.com/waxio0" target="_blank" rel="noopener" aria-label="Twitter" style="color:var(--muted);font-size:0.85rem;">Twitter/X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about/">About</a></li>
+          <li><a href="services/">Services</a></li>
+          <li><a href="contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/">Business Websites</a></li>
+          <li><a href="services/">E-commerce Stores</a></li>
+          <li><a href="services/">SEO Optimisation</a></li>
+          <li><a href="services/">Hosting & Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.5 6.5l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +44 7534 718384</li>
+          <li><a href="https://wa.me/447534718384" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><a href="contact/">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Waxioo. All rights reserved.</div>
+      <div>Professional Website Design & Development</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+
+    function closeMenu() {
+      if (menu) {
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    }
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('active');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // GA events
+    document.querySelectorAll('.btn-black, .btn-white, a[href*="contact"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (typeof gtag === 'function') gtag('event', 'cta_click', { button_text: btn.innerText.trim() });
+      });
+    });
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof gtag === 'function') gtag('event', 'whatsapp_click');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Waxioo Services — Custom website design, local SEO, e-commerce and hosting for service businesses in the USA & UK. Starting at $397." />
+  <meta property="og:title" content="Services | Waxioo Web Design" />
+  <meta property="og:url" content="https://waxioo.com/services/" />
+  <title>Services | Waxioo Web Design</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94SELJ5WSD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-94SELJ5WSD');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --white: #F5F3EE; --white-pure: #ffffff;
+      --gray: #EDEAE4; --gray2: #E0DDD6; --muted: #6b6760;
+      --max: 1100px; --pad: 2rem;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Figtree', -apple-system, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.5; }
+
+    /* Grid lines */
+    .grid-wrap { position: relative; }
+    .grid-line-left, .grid-line-right { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.07); pointer-events: none; z-index: 0; }
+    .grid-line-left { left: calc((100% - var(--max)) / 2); }
+    .grid-line-right { right: calc((100% - var(--max)) / 2); }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 3rem); max-width: var(--max); z-index: 1000;
+      background: rgba(255,255,255,0.88); backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.08); border-radius: 100px;
+      padding: .6rem 1.5rem; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: .25rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 500; padding: .4rem .9rem; border-radius: 100px; transition: all .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--black); background: var(--gray); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; font-weight: 600 !important; padding: .5rem 1.2rem !important; }
+    .menu-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      z-index: 1002; position: relative;
+    }
+    .menu-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 100px; font-size: .95rem; font-weight: 600; text-decoration: none; transition: all .15s; white-space: nowrap; font-family: inherit; cursor: pointer; border: none; }
+    .btn-black { background: var(--black); color: var(--white); }
+    .btn-black:hover { background: #222; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--gray2); }
+    .btn-outline:hover { background: var(--gray); }
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: #eee; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.2); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.5); }
+
+    /* HERO */
+    .hero-wrap { padding: 10rem var(--pad) 5rem; max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+    .hero-wrap h1 { font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.5rem; }
+    .hero-wrap h1 em { font-style: italic; }
+    .hero-lead { font-size: 1.15rem; color: var(--muted); line-height: 1.7; max-width: 600px; margin-bottom: 2.5rem; }
+
+    /* SECTIONS */
+    .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .section { padding: 6rem 0; position: relative; }
+    .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); position: relative; z-index: 1; }
+    .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; }
+    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 560px; line-height: 1.6; margin-bottom: 3rem; }
+
+    /* PACKAGE CARDS */
+    .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pkg-card { border: 1.5px solid var(--gray2); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; }
+    .pkg-card:hover { border-color: #bbb; box-shadow: 0 8px 30px rgba(0,0,0,.07); }
+    .pkg-card.featured { background: var(--black); border-color: var(--black); }
+    .pkg-emoji { width: 100%; height: 150px; display: flex; align-items: center; justify-content: center; background: var(--gray); }
+    .pkg-card.featured .pkg-emoji { background: #111; }
+    .pkg-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .pkg-tag { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; display: block; }
+    .pkg-card.featured .pkg-tag { color: rgba(255,255,255,.5); }
+    .pkg-body h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: .6rem; }
+    .pkg-card.featured h3 { color: var(--white); }
+    .pkg-body p { font-size: .9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; flex: 1; }
+    .pkg-card.featured p { color: rgba(255,255,255,.55); }
+    .pkg-price { font-size: 1.6rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 1.2rem; }
+    .pkg-card.featured .pkg-price { color: var(--white); }
+    .pkg-price span { font-size: .85rem; font-weight: 400; color: var(--muted); }
+    .pkg-card.featured .pkg-price span { color: rgba(255,255,255,.45); }
+    .pkg-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; }
+    .pkg-list li { display: flex; align-items: flex-start; gap: .5rem; font-size: .88rem; line-height: 1.4; }
+    .pkg-card.featured .pkg-list li { color: rgba(255,255,255,.8); }
+    .pkg-list li::before { content: "✓"; color: #22c55e; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .pkg-body .btn { width: 100%; justify-content: center; border-radius: 12px; padding: .85rem; }
+    .pkg-card:not(.featured) .btn { background: transparent; border: 1.5px solid var(--gray2); color: var(--black); }
+    .pkg-card:not(.featured) .btn:hover { background: var(--gray); }
+    .pkg-card.featured .btn { background: var(--white-pure); color: var(--black); border: none; }
+    .pkg-card.featured .btn:hover { background: #eee; }
+
+    /* COMPARISON TABLE */
+    .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .compare-table { border: 1.5px solid var(--gray2); border-radius: 20px; overflow: hidden; min-width: 500px; }
+    .compare-head { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; background: var(--black); color: var(--white); padding: 1.2rem 1.5rem; gap: 1rem; font-size: .85rem; font-weight: 700; }
+    .compare-head .c { text-align: center; }
+    .compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 1rem 1.5rem; gap: 1rem; border-top: 1px solid var(--gray2); font-size: .9rem; align-items: center; transition: background .15s; }
+    .compare-row:hover { background: var(--gray); }
+    .compare-row .fname { font-weight: 500; }
+    .cv { text-align: center; font-size: .85rem; color: var(--muted); font-weight: 600; }
+    .cy { text-align: center; color: #22c55e; font-weight: 700; font-size: 1rem; }
+    .cn { text-align: center; color: var(--gray2); font-size: 1.2rem; }
+
+    /* ADD-ONS */
+    .addon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray2); border: 1.5px solid var(--gray2); border-radius: 20px; overflow: hidden; }
+    .addon-card { background: var(--white-pure); padding: 2rem; display: flex; flex-direction: column; }
+    .addon-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .addon-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .4rem; letter-spacing: -.02em; }
+    .addon-card p { font-size: .88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; flex: 1; }
+    .addon-price { font-size: 1.2rem; font-weight: 800; letter-spacing: -.03em; }
+    .addon-price span { font-size: .82rem; font-weight: 400; color: var(--muted); }
+
+    /* MARKETING */
+    .mkt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .mkt-card { border: 1.5px solid var(--gray2); border-radius: 20px; padding: 2.2rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: border-color .2s, box-shadow .2s; }
+    .mkt-card:hover { border-color: #bbb; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .mkt-icon { font-size: 2rem; width: 52px; height: 52px; background: var(--gray); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mkt-content h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem; letter-spacing: -.02em; }
+    .mkt-content p { font-size: .9rem; color: var(--muted); line-height: 1.6; margin: 0; }
+
+    /* PROCESS */
+    .process-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--gray2); border: 1.5px solid var(--gray2); border-radius: 20px; overflow: hidden; margin-top: 2.5rem; }
+    .pstep { background: var(--white); padding: 2rem 1.5rem; text-align: center; }
+    .pnum { font-size: 2rem; font-weight: 800; color: var(--gray2); font-style: italic; letter-spacing: -.03em; line-height: 1; margin-bottom: .8rem; }
+    .pstep h3 { font-size: .92rem; font-weight: 700; margin-bottom: .4rem; }
+    .pstep p { font-size: .82rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+    /* FAQ */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--gray2); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--black); transition: color .15s; }
+    .faq-arrow { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s; opacity: .4; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding-bottom: 1.4rem; font-size: .95rem; color: var(--muted); line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CTA */
+    .cta-section { background: var(--black); color: var(--white); padding: 6rem 0; text-align: center; }
+    .cta-section h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: 1rem; color: var(--white); }
+    .cta-section h2 em { font-style: italic; }
+    .cta-section p { color: rgba(255,255,255,.5); font-size: 1.05rem; margin-bottom: 2.5rem; }
+    .cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--gray2); padding: 3rem 0; }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .5rem; }
+    .footer-brand p { font-size: .88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .footer-col h4 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-col ul li a { text-decoration: none; font-size: .9rem; color: var(--black); transition: color .15s; }
+    .footer-col ul li a:hover { color: var(--muted); }
+    .footer-col ul li { font-size: .9rem; color: var(--black); }
+    .footer-bottom { max-width: var(--max); margin: 2rem auto 0; padding: 1.5rem var(--pad) 0; border-top: 1px solid var(--gray2); display: flex; justify-content: space-between; align-items: center; font-size: .82rem; color: var(--muted); }
+
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; width: 52px; height: 52px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s; }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 28px; height: 28px; }
+    .wa-tooltip { position: absolute; right: 60px; background: var(--black); color: var(--white); font-size: .78rem; font-weight: 600; padding: .4rem .8rem; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; } .delay-2 { transition-delay: .2s; } .delay-3 { transition-delay: .3s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .pkg-grid { grid-template-columns: 1fr 1fr; }
+      .mkt-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .process-strip { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0; right: 0;
+        background: var(--white-pure);
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1.5rem;
+        gap: 0.5rem;
+        z-index: 1001;
+        list-style: none;
+        border-radius: 16px;
+        border: 1px solid var(--gray2);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      }
+      .nav-links.active a { font-size: 1rem; padding: 0.6rem 1.2rem; width: 100%; text-align: center; }
+
+      /* Hero */
+      .hero-wrap { padding: 7rem 1.25rem 3rem; }
+      .hero-wrap h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+      .hero-lead { font-size: 1rem; }
+      .hero-wrap .btn { width: 100%; justify-content: center; }
+      .hero-wrap div[style] { flex-direction: column; }
+
+      /* Sections */
+      .section { padding: 3rem 0; }
+      .section-inner { padding: 0 1.25rem; }
+
+      /* Packages */
+      .pkg-grid { grid-template-columns: 1fr; }
+      .pkg-emoji { height: 100px; }
+
+      /* Addons */
+      .addon-grid { grid-template-columns: 1fr; }
+
+      /* Process */
+      .process-strip { grid-template-columns: 1fr 1fr; }
+
+      /* FAQ */
+      .faq-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      /* CTA */
+      .cta-section { padding: 4rem 0; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .cta-btns .btn { width: 100%; justify-content: center; max-width: 340px; }
+
+      /* Footer */
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+      .grid-line-left, .grid-line-right { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .process-strip { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="header">
+    <a href="/" class="nav-logo"><img src="../images/waxio-logo.jpg" alt="Waxioo"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/services/" class="active">Services</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/contact/" class="nav-cta">Get My Website →</a></li>
+    </ul>
+  </nav>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/447534718384?text=Hi!%20I'm%20interested%20in%20a%20website" class="wa-float" target="_blank" rel="noopener">
+    <span class="wa-tooltip">Chat — We reply within 1 hour</span>
+    <img src="../images/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- HERO -->
+  <div class="grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="hero-wrap">
+      <div class="eyebrow reveal">What we offer</div>
+      <h1 class="reveal delay-1">Everything your business needs<br><em>to win online</em></h1>
+      <p class="hero-lead reveal delay-2">From a 3-page starter site to a full e-commerce store with local SEO — we have a package for every business, every budget, and every goal.</p>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;" class="reveal delay-3">
+        <a href="#packages" class="btn btn-black">See all packages</a>
+        <a href="/contact/" class="btn btn-outline">Talk to us first</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <section class="section grid-wrap" id="packages" style="background:var(--gray);">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">Website packages</div>
+      <h2 class="section-title reveal delay-1">Pick your package. <em>Start winning.</em></h2>
+      <p class="section-sub reveal delay-2">All packages include 1 revision round, mobile responsive design, and SEO foundations. No hidden fees — ever.</p>
+      <div class="pkg-grid">
+
+        <div class="pkg-card reveal delay-1">
+          <div class="pkg-emoji">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <div class="pkg-body">
+            <span class="pkg-tag">Starter</span>
+            <h3>3-Page Website</h3>
+            <p>Perfect for brand new businesses that need a clean, professional online presence to get started.</p>
+            <div class="pkg-price">$397 <span>/one-time</span></div>
+            <ul class="pkg-list">
+              <li>3 custom pages</li>
+              <li>Mobile responsive</li>
+              <li>Contact form</li>
+              <li>Basic SEO setup</li>
+              <li>Delivered in 3 days</li>
+            </ul>
+            <a href="/contact/" class="btn">Get started →</a>
+          </div>
+        </div>
+
+        <div class="pkg-card featured reveal delay-2">
+          <div class="pkg-emoji">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="pkg-body">
+            <span class="pkg-tag">⭐ Most Popular — Growth</span>
+            <h3>5-Page Website</h3>
+            <p>For service businesses that want Google rankings, online bookings, and to look more professional than the competition.</p>
+            <div class="pkg-price">$697 <span>/one-time</span></div>
+            <ul class="pkg-list">
+              <li>5 custom pages</li>
+              <li>Online booking system</li>
+              <li>Local SEO optimisation</li>
+              <li>Google Maps integration</li>
+              <li>SSL certificate</li>
+              <li>Photo gallery</li>
+              <li>Delivered in 3 days</li>
+            </ul>
+            <a href="/contact/" class="btn">Get started →</a>
+          </div>
+        </div>
+
+        <div class="pkg-card reveal delay-3">
+          <div class="pkg-emoji">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="pkg-body">
+            <span class="pkg-tag">Premium</span>
+            <h3>7-Page + E-commerce</h3>
+            <p>For businesses serious about growth. Everything in Growth, plus e-commerce, advanced SEO, and priority support.</p>
+            <div class="pkg-price">$1,197 <span>/one-time</span></div>
+            <ul class="pkg-list">
+              <li>7 custom pages</li>
+              <li>Everything in Growth</li>
+              <li>E-commerce (up to 20 products)</li>
+              <li>Advanced SEO setup</li>
+              <li>Google Analytics</li>
+              <li>1 month free maintenance</li>
+              <li>Priority WhatsApp support</li>
+              <li>Delivered in 5 days</li>
+            </ul>
+            <a href="/contact/" class="btn">Get started →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">Compare packages</div>
+      <h2 class="section-title reveal delay-1">Everything side by side, <em>no surprises</em></h2>
+      <p class="section-sub reveal delay-2">Pick the right plan with confidence — see exactly what's included in each.</p>
+      <div class="compare-wrap reveal delay-2">
+        <div class="compare-table">
+          <div class="compare-head">
+            <div>Feature</div>
+            <div class="c">Starter<br><span style="font-weight:400;opacity:.6;font-size:.75rem;">$397</span></div>
+            <div class="c">Growth<br><span style="font-weight:400;opacity:.6;font-size:.75rem;">$697</span></div>
+            <div class="c">Premium<br><span style="font-weight:400;opacity:.6;font-size:.75rem;">$1,197</span></div>
+          </div>
+          <div class="compare-row"><div class="fname">Custom pages</div><div class="cv">3</div><div class="cv">5</div><div class="cv">7</div></div>
+          <div class="compare-row"><div class="fname">Mobile responsive</div><div class="cy">✓</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Contact form</div><div class="cy">✓</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Basic SEO</div><div class="cy">✓</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Delivered in 3 days</div><div class="cy">✓</div><div class="cy">✓</div><div class="cn">—</div></div>
+          <div class="compare-row"><div class="fname">Online booking system</div><div class="cn">—</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Local SEO optimisation</div><div class="cn">—</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Google Maps integration</div><div class="cn">—</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">SSL certificate</div><div class="cn">—</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Photo gallery</div><div class="cn">—</div><div class="cy">✓</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">E-commerce store</div><div class="cn">—</div><div class="cn">—</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Advanced SEO</div><div class="cn">—</div><div class="cn">—</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Google Analytics setup</div><div class="cn">—</div><div class="cn">—</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">1 month free maintenance</div><div class="cn">—</div><div class="cn">—</div><div class="cy">✓</div></div>
+          <div class="compare-row"><div class="fname">Priority support</div><div class="cn">—</div><div class="cn">—</div><div class="cy">✓</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section" style="background:var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">Add-ons</div>
+      <h2 class="section-title reveal delay-1">Power up your website <em>even further</em></h2>
+      <p class="section-sub reveal delay-2">Add any of these to your package. All optional — no pressure ever.</p>
+      <div class="addon-grid reveal delay-2">
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>Hosting &amp; Maintenance</h3>
+          <p>Fast, secure hosting with monthly updates, SSL renewal, uptime monitoring, and technical support.</p>
+          <div class="addon-price">$49 <span>/month</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+          <h3>Logo &amp; Brand Design</h3>
+          <p>Professional logo and full brand kit — colours, typography, and usage guidelines.</p>
+          <div class="addon-price">From $297 <span>/one-time</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h3>Analytics Dashboard Setup</h3>
+          <p>Google Analytics and Search Console configured properly so you know what's working.</p>
+          <div class="addon-price">$197 <span>/one-time</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Google Business Profile</h3>
+          <p>Fully optimised Google Business Profile so you appear on Maps and in local searches.</p>
+          <div class="addon-price">$149 <span>/one-time</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Professional Copywriting</h3>
+          <p>We write all your page content — headlines, service descriptions, and CTAs optimised for conversions.</p>
+          <div class="addon-price">$197 <span>/one-time</span></div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <h3>Stock Photo Sourcing</h3>
+          <p>High-quality licensed images that match your industry and brand — ready for your website.</p>
+          <div class="addon-price">$97 <span>/one-time</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL MARKETING -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="eyebrow reveal">Growth services</div>
+      <h2 class="section-title reveal delay-1">Go beyond the website. <em>Dominate your market.</em></h2>
+      <p class="section-sub reveal delay-2">Once your site is live, these services drive more traffic, more leads, and more revenue every month.</p>
+      <div class="mkt-grid">
+        <div class="mkt-card reveal delay-1">
+          <div class="mkt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="mkt-content">
+            <h3>SEO Campaigns</h3>
+            <p>Ongoing link building, content strategy, and technical SEO that pushes you to page 1 of Google. Monthly retainer from $499/month.</p>
+          </div>
+        </div>
+        <div class="mkt-card reveal delay-2">
+          <div class="mkt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+          <div class="mkt-content">
+            <h3>Google &amp; Meta Ads (PPC)</h3>
+            <p>Paid advertising campaigns targeting customers actively searching for what you offer. From $399/month.</p>
+          </div>
+        </div>
+        <div class="mkt-card reveal delay-1">
+          <div class="mkt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <div class="mkt-content">
+            <h3>Social Media Management</h3>
+            <p>Consistent, on-brand content for Instagram, Facebook, and LinkedIn. Posts, captions, and scheduling handled for you. From $299/month.</p>
+          </div>
+        </div>
+        <div class="mkt-card reveal delay-2">
+          <div class="mkt-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg></div>
+          <div class="mkt-content">
+            <h3>Lead Generation Funnels</h3>
+            <p>Custom landing pages and automated follow-up that capture leads and turn them into paying customers. From $697/project.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--gray);border-radius:16px;border:1.5px solid var(--gray2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;" class="reveal delay-3">
+        <div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:.2rem;">Not sure which growth service fits your business?</div>
+          <div style="font-size:.88rem;color:var(--muted);">Chat with us — we'll recommend exactly what you need.</div>
+        </div>
+        <a href="https://wa.me/447534718384" class="btn btn-black" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z"/></svg>
+          Chat now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background:var(--gray);">
+    <div class="section-inner">
+      <div class="eyebrow reveal">The process</div>
+      <h2 class="section-title reveal delay-1">From order to <em>live in 3 days</em></h2>
+      <div class="process-strip reveal delay-2">
+        <div class="pstep"><div class="pnum">01</div><h3>You reach out</h3><p>WhatsApp or contact form. We reply within 1 hour.</p></div>
+        <div class="pstep"><div class="pnum">02</div><h3>Send your content</h3><p>Logo, photos, and services info. Takes 10 minutes.</p></div>
+        <div class="pstep"><div class="pnum">03</div><h3>We build it</h3><p>Custom design and SEO, built for your industry.</p></div>
+        <div class="pstep"><div class="pnum">04</div><h3>You review</h3><p>Preview link shared. Request any changes you want.</p></div>
+        <div class="pstep"><div class="pnum">05</div><h3>We launch 🚀</h3><p>Live and winning customers in 3 days.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="faq-grid">
+        <div>
+          <div class="eyebrow reveal">FAQ</div>
+          <h2 class="section-title reveal delay-1">Questions about <em>our services</em></h2>
+          <p class="section-sub reveal delay-2">Still unsure? <a href="https://wa.me/447534718384" style="color:var(--black);font-weight:600;">Message us on WhatsApp</a> — we reply within an hour.</p>
+          <a href="/contact/" class="btn btn-black reveal delay-3">Get a free consultation →</a>
+        </div>
+        <div class="faq-list reveal delay-2">
+          <div class="faq-item open">
+            <button class="faq-q" onclick="toggleFaq(this)">Can I upgrade my package later?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Absolutely. Many clients start on Starter or Growth and upgrade as their business grows. We'll apply the price difference so you never pay double.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What if I don't have a logo or photos?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">No problem. We can source professional stock photos for your industry and create a placeholder logo. Or add our Logo & Branding add-on from $297 for a fully custom identity.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do I own the website after it's built?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Yes — 100%. Once the project is complete and paid, all files and code are yours. You're never locked in to using us for hosting or maintenance.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is hosting included in the price?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Hosting is a separate $49/month add-on. You can also host with your own provider — we'll hand over all the files. The package price covers the build only.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do you offer payment plans?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Yes. For Growth and Premium packages we offer 50% deposit to start, and 50% on delivery. Message us on WhatsApp to discuss options.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How do growth services work?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Growth services like SEO, Ads, and Social Media are monthly retainers that start after your website is live. No long-term contracts — cancel anytime.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2 class="reveal">Ready to get started?<br><em>Let's build something great.</em></h2>
+      <p class="reveal delay-1">Pick a package, message us on WhatsApp, and your website will be live in 3 days.</p>
+      <div class="cta-btns reveal delay-2">
+        <a href="/contact/" class="btn btn-white">Get My Website in 3 Days →</a>
+        <a href="https://wa.me/447534718384" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5C21 16.75 16.52 21 11 21C9.43 21 7.94 20.63 6.61 20L3 21L4.06 17.67C3.4 16.31 3 14.75 3 13.1C3 7.85 7.48 3.6 13 3.6C15.66 3.6 18.06 4.64 19.8 6.33C20.87 7.37 21 10.05 21 11.5Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Waxioo</h3>
+        <p>Professional website design for service businesses in the USA, UK & Europe. Built to convert visitors into customers.</p>
+        <div style="display:flex;gap:.75rem;">
+          <a href="https://www.facebook.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Facebook</a>
+          <a href="https://www.instagram.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Instagram</a>
+          <a href="https://x.com/waxio0" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Twitter/X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services/">Services</a></li><li><a href="/contact/">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="/services/">Business Websites</a></li><li><a href="/services/">E-commerce Stores</a></li><li><a href="/services/">SEO Optimisation</a></li><li><a href="/services/">Hosting & Support</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📱 +44 7534 718384</li>
+          <li><a href="https://wa.me/447534718384" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><a href="/contact/">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Waxioo. All rights reserved.</div>
+      <div>Professional Website Design & Development</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+
+    function closeMenu() {
+      if (menu) menu.classList.remove('active');
+    }
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => menu.classList.toggle('active'));
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    }
+
+    document.addEventListener('click', (e) => {
+      if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>

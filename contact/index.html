@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Waxioo — Get your free website quote today. Chat on WhatsApp or fill in the form. We reply within 1 hour." />
+  <meta property="og:title" content="Contact Us | Waxioo Web Design" />
+  <meta property="og:url" content="https://waxioo.com/contact/" />
+  <title>Contact | Waxioo Web Design</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-94SELJ5WSD"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-94SELJ5WSD');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808;
+      --white: #F5F3EE;
+      --white-pure: #ffffff;
+      --gray: #EDEAE4;
+      --gray2: #E0DDD6;
+      --muted: #6b6760;
+      --max: 1100px;
+      --pad: 2rem;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Figtree', -apple-system, sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.5; }
+
+    .grid-wrap { position: relative; }
+    .grid-line-left, .grid-line-right { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(0,0,0,0.07); pointer-events: none; z-index: 0; }
+    .grid-line-left { left: calc((100% - var(--max)) / 2); }
+    .grid-line-right { right: calc((100% - var(--max)) / 2); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 1rem; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 3rem); max-width: var(--max); z-index: 1000;
+      background: rgba(245,243,238,0.88); backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.08); border-radius: 100px;
+      padding: .6rem 1.5rem; display: flex; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: .25rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .9rem; font-weight: 500; padding: .4rem .9rem; border-radius: 100px; transition: all .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--black); background: var(--gray); }
+    .nav-cta { background: var(--black) !important; color: var(--white) !important; font-weight: 600 !important; padding: .5rem 1.2rem !important; }
+    .menu-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      z-index: 1002; position: relative;
+    }
+    .menu-toggle span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.5rem; border-radius: 100px; font-size: .95rem; font-weight: 600; text-decoration: none; transition: all .15s; white-space: nowrap; font-family: inherit; cursor: pointer; border: none; }
+    .btn-black { background: var(--black); color: var(--white); }
+    .btn-black:hover { background: #222; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--black); border: 1.5px solid var(--gray2); }
+    .btn-outline:hover { background: var(--gray); }
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: #eae8e3; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.2); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.5); }
+    .btn-wa { background: #25d366; color: #fff; }
+    .btn-wa:hover { background: #1db954; transform: translateY(-1px); }
+
+    .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .section { padding: 6rem 0; position: relative; }
+    .section-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); position: relative; z-index: 1; }
+
+    .hero-wrap { padding: 10rem var(--pad) 5rem; max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+    .hero-wrap h1 { font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; margin-bottom: 1.5rem; }
+    .hero-wrap h1 em { font-style: italic; }
+    .hero-lead { font-size: 1.15rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .contact-options { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-card { border: 1.5px solid var(--gray2); border-radius: 20px; padding: 1.8rem; background: var(--white-pure); transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-card:hover { border-color: #bbb; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .contact-card-head { display: flex; align-items: center; gap: 1rem; }
+    .contact-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--gray); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .contact-card h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .15rem; }
+    .contact-card .sub { font-size: .88rem; color: var(--muted); margin: 0; }
+    .contact-badge { display: inline-flex; align-items: center; gap: .4rem; background: #dcfce7; color: #166534; font-size: .72rem; font-weight: 700; padding: .3rem .75rem; border-radius: 100px; width: fit-content; }
+    .contact-badge::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.2)} }
+
+    .form-wrap { background: var(--white-pure); border: 1.5px solid var(--gray2); border-radius: 24px; padding: 2.5rem; }
+    .form-wrap h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .4rem; }
+    .form-wrap .form-sub { font-size: .9rem; color: var(--muted); margin-bottom: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.1rem; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--black); }
+    .form-group input, .form-group select, .form-group textarea { font-family: 'Figtree', sans-serif; font-size: .9rem; color: var(--black); background: var(--white); border: 1.5px solid var(--gray2); border-radius: 12px; padding: .75rem 1rem; outline: none; transition: border-color .15s, background .15s; width: 100%; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--black); background: var(--white-pure); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .form-submit { width: 100%; justify-content: center; border-radius: 14px; padding: 1rem; font-size: 1rem; margin-top: .5rem; }
+    .form-note { font-size: .78rem; color: var(--muted); text-align: center; margin-top: .75rem; }
+    .form-success { display: none; text-align: center; padding: 3rem 2rem; flex-direction: column; align-items: center; gap: 1rem; }
+    .form-success.active { display: flex; }
+    .success-icon { width: 64px; height: 64px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .form-success h3 { font-size: 1.3rem; font-weight: 800; }
+    .form-success p { font-size: .9rem; color: var(--muted); max-width: 320px; line-height: 1.6; }
+
+    .trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray2); border: 1.5px solid var(--gray2); border-radius: 20px; overflow: hidden; }
+    .trust-item { background: var(--white-pure); padding: 2rem 1.5rem; text-align: center; }
+    .trust-num { font-size: 2rem; font-weight: 800; letter-spacing: -.04em; margin-bottom: .3rem; font-style: italic; }
+    .trust-label { font-size: .82rem; color: var(--muted); line-height: 1.4; }
+
+    .faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--gray2); }
+    .faq-q { width: 100%; background: none; border: none; text-align: left; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; padding: 1.4rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--black); }
+    .faq-arrow { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s; opacity: .4; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding-bottom: 1.4rem; font-size: .95rem; color: var(--muted); line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+
+    .cta-section { background: var(--black); padding: 6rem 0; text-align: center; }
+    .cta-section h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: 1rem; color: #fff; }
+    .cta-section h2 em { font-style: italic; }
+    .cta-section p { color: rgba(255,255,255,.5); font-size: 1.05rem; margin-bottom: 2.5rem; }
+    .cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+
+    .footer { border-top: 1px solid var(--gray2); padding: 3rem 0; background: var(--white); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+    .footer-brand h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .5rem; }
+    .footer-brand p { font-size: .88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .footer-col h4 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .footer-col ul li a { text-decoration: none; font-size: .9rem; color: var(--black); transition: color .15s; }
+    .footer-col ul li a:hover { color: var(--muted); }
+    .footer-col ul li { font-size: .9rem; color: var(--black); }
+    .footer-bottom { max-width: var(--max); margin: 2rem auto 0; padding: 1.5rem var(--pad) 0; border-top: 1px solid var(--gray2); display: flex; justify-content: space-between; align-items: center; font-size: .82rem; color: var(--muted); }
+
+    .wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; width: 52px; height: 52px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s; }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float img { width: 28px; height: 28px; }
+    .wa-tooltip { position: absolute; right: 60px; background: var(--black); color: #fff; font-size: .78rem; font-weight: 600; padding: .4rem .8rem; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: .1s; } .delay-2 { transition-delay: .2s; } .delay-3 { transition-delay: .3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .contact-grid, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0; right: 0;
+        background: var(--white-pure);
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1.5rem;
+        gap: 0.5rem;
+        z-index: 1001;
+        list-style: none;
+        border-radius: 16px;
+        border: 1px solid var(--gray2);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      }
+      .nav-links.active a { font-size: 1rem; padding: 0.6rem 1.2rem; width: 100%; text-align: center; }
+
+      /* Hero */
+      .hero-wrap { padding: 7rem 1.25rem 3rem; }
+      .hero-wrap h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 1rem; }
+      .hero-lead { font-size: 1rem; line-height: 1.6; }
+
+      /* Sections */
+      .section { padding: 3rem 0; }
+      .section-inner { padding: 0 1.25rem; }
+
+      /* Contact & form layout — single column */
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-card { padding: 1.4rem; }
+      .form-wrap { padding: 1.5rem; border-radius: 16px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea { font-size: 1rem; padding: .85rem 1rem; }
+      .form-group label { font-size: .9rem; }
+      .form-submit { font-size: 1rem; padding: 1rem; }
+
+      /* Trust strip */
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .trust-num { font-size: 1.8rem; }
+      .trust-label { font-size: .85rem; }
+
+      /* FAQ */
+      .faq-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .faq-q { font-size: 1rem; }
+
+      /* CTA */
+      .cta-section { padding: 4rem 0; }
+      .cta-btns { flex-direction: column; align-items: center; }
+      .cta-btns .btn { width: 100%; justify-content: center; max-width: 340px; }
+
+      /* Footer */
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
+
+      /* Hide decorative grid lines on mobile */
+      .grid-line-left, .grid-line-right { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-strip { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo"><img src="../images/waxio-logo.jpg" alt="Waxioo"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/contact/" class="active">Contact</a></li>
+      <li><a href="/contact/" class="nav-cta">Get My Website →</a></li>
+    </ul>
+  </nav>
+
+  <a href="https://wa.me/447534718384?text=Hi!%20I'm%20interested%20in%20a%20website%20for%20my%20business" class="wa-float" target="_blank" rel="noopener">
+    <span class="wa-tooltip">We reply within 1 hour</span>
+    <img src="../images/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- HERO -->
+  <div class="grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="hero-wrap">
+      <div class="eyebrow reveal">Get in touch</div>
+      <h1 class="reveal delay-1">Let's build your<br><em>website together</em></h1>
+      <p class="hero-lead reveal delay-2">Pick any way that suits you. We're fast, friendly, and reply within 1 hour — no bots, no automated replies. Just real people who care about your business.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT + FORM -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div class="contact-options">
+
+          <div class="contact-card reveal delay-1">
+            <div class="contact-card-head">
+              <div class="contact-icon">💬</div>
+              <div>
+                <h3>WhatsApp — Fastest</h3>
+                <p class="sub">+44 7534 718384</p>
+              </div>
+            </div>
+            <div class="contact-badge">Online now — replies within 1 hour</div>
+            <a href="https://wa.me/447534718384?text=Hi!%20I'm%20interested%20in%20a%20website%20for%20my%20business" class="btn btn-wa" target="_blank" rel="noopener">
+              <img src="../images/whatsapp.png" alt="" width="18" height="18" style="border-radius:3px;">
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          <div class="contact-card reveal delay-2">
+            <div class="contact-card-head">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h3>Call Us</h3>
+                <p class="sub">+44 7534 718384</p>
+              </div>
+            </div>
+            <p style="font-size:.88rem;color:var(--muted);">Mon – Sat, 9am – 7pm UK time. Happy to talk through your project before you commit to anything.</p>
+            <a href="tel:+447534718384" class="btn btn-outline">📞 Call now</a>
+          </div>
+
+          <div class="contact-card reveal delay-3">
+            <div class="contact-card-head">
+              <div class="contact-icon">✉️</div>
+              <div>
+                <h3>Prefer the form?</h3>
+                <p class="sub">We reply within a few hours</p>
+              </div>
+            </div>
+            <p style="font-size:.88rem;color:var(--muted);">Fill in the form to the right — tell us about your business and we'll come back with a free quote, no strings attached.</p>
+          </div>
+
+          <!-- What happens next -->
+          <div style="border:1.5px solid var(--gray2);border-radius:20px;padding:1.8rem;background:var(--white-pure);" class="reveal delay-3">
+            <div class="eyebrow" style="margin-bottom:.9rem;">What happens next</div>
+            <div style="display:flex;flex-direction:column;gap:.9rem;">
+              <div style="display:flex;gap:.8rem;align-items:flex-start;">
+                <div style="width:26px;height:26px;border-radius:50%;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;line-height:1;">1</div>
+                <div style="font-size:.88rem;line-height:1.5;"><strong>You send a message</strong> via WhatsApp, call, or the form</div>
+              </div>
+              <div style="display:flex;gap:.8rem;align-items:flex-start;">
+                <div style="width:26px;height:26px;border-radius:50%;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;line-height:1;">2</div>
+                <div style="font-size:.88rem;line-height:1.5;"><strong>We reply within 1 hour</strong> with a free quote and next steps</div>
+              </div>
+              <div style="display:flex;gap:.8rem;align-items:flex-start;">
+                <div style="width:26px;height:26px;border-radius:50%;background:var(--gray);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;line-height:1;">3</div>
+                <div style="font-size:.88rem;line-height:1.5;"><strong>Your website goes live</strong> in as little as 3 days</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div class="form-wrap reveal delay-2">
+          <div id="formContent">
+            <h2>Get a free quote</h2>
+            <p class="form-sub">Tell us about your business — takes about 2 minutes.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name</label>
+                <input type="text" id="fname" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname" placeholder="Smith" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" placeholder="john@yourbusiness.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+              <input type="tel" id="phone" placeholder="+1 555 000 0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="business">Business name</label>
+              <input type="text" id="business" placeholder="Smith Cleaning Co." />
+            </div>
+
+            <div class="form-group">
+              <label for="package">Which package are you interested in?</label>
+              <select id="package">
+                <option value="" disabled selected>Select a package…</option>
+                <option>Starter — $397 (3 pages)</option>
+                <option>Growth — $697 (5 pages) ⭐ Most Popular</option>
+                <option>Premium — $1,197 (7 pages + e-commerce)</option>
+                <option>Not sure yet — just exploring</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your business</label>
+              <textarea id="message" placeholder="What does your business do? Do you have a logo? Any websites you like the look of?"></textarea>
+            </div>
+
+            <button class="btn btn-black form-submit" onclick="submitForm()">Send my free quote request →</button>
+            <p class="form-note">🔒 No spam. No pressure. Free quote, zero obligation.</p>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h3>Message received!</h3>
+            <p>We'll get back to you within a few hours with your free quote. Or follow up on WhatsApp for the fastest reply.</p>
+            <a href="https://wa.me/447534718384" class="btn btn-wa" target="_blank" rel="noopener">
+              <img src="../images/whatsapp.png" alt="" width="18" height="18" style="border-radius:3px;">
+              Follow up on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section style="padding:4rem 0;background:var(--gray);">
+    <div class="section-inner">
+      <div class="trust-strip reveal">
+        <div class="trust-item"><div class="trust-num">3</div><div class="trust-label">Days to build<br>your website</div></div>
+        <div class="trust-item"><div class="trust-num">1hr</div><div class="trust-label">Average reply<br>time</div></div>
+        <div class="trust-item"><div class="trust-num">$397</div><div class="trust-label">Starting price,<br>no hidden fees</div></div>
+        <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Satisfaction<br>guarantee</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section grid-wrap">
+    <div class="grid-line-left"></div>
+    <div class="grid-line-right"></div>
+    <div class="section-inner">
+      <div class="faq-grid">
+        <div>
+          <div class="eyebrow reveal">FAQ</div>
+          <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem;" class="reveal delay-1">Before you<br><em>reach out</em></h2>
+          <p style="color:var(--muted);font-size:1rem;line-height:1.6;margin-bottom:2rem;" class="reveal delay-2">Still have questions? Just send us a WhatsApp and we'll answer right away.</p>
+          <a href="https://wa.me/447534718384" class="btn btn-black reveal delay-3" target="_blank" rel="noopener">💬 Ask on WhatsApp</a>
+        </div>
+        <div class="faq-list reveal delay-2">
+          <div class="faq-item open">
+            <button class="faq-q" onclick="toggleFaq(this)">How fast will you reply?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">We reply to all WhatsApp messages within 1 hour during business hours (Mon–Sat, 9am–7pm UK). Form submissions are answered within a few hours. We never leave you waiting days for a response.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Do I need to have everything ready before contacting you?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Not at all. Just reach out and we'll guide you through everything. Lots of our clients come to us with just a business name and a rough idea — we help you figure out the rest.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is the quote really free and no obligation?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">100% free with zero obligation. We'll give you a clear price upfront and you can decide from there. No pressure, no sales tactics — if it's not the right fit we'll tell you honestly.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Can I call instead of using WhatsApp or the form?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Absolutely. Call +44 7534 718384 Monday to Saturday between 9am and 7pm UK time. We're happy to talk through your project, answer questions, and give you a quote on the call.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What if I'm not happy with the final website?
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-a">Every project includes a revision round — just tell us what you want changed and we'll fix it. We don't hand things over until you're genuinely happy. Your satisfaction is guaranteed.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="section-inner">
+      <h2 class="reveal">Still thinking about it?<br><em>Don't overthink it.</em></h2>
+      <p class="reveal delay-1">Send us a message — no commitment, no pressure. Just a free quote and a friendly conversation.</p>
+      <div class="cta-btns reveal delay-2">
+        <a href="https://wa.me/447534718384" class="btn btn-white" target="_blank" rel="noopener">💬 WhatsApp Us Now</a>
+        <a href="#" onclick="document.getElementById('fname').focus();window.scrollTo({top:document.getElementById('fname').getBoundingClientRect().top+window.scrollY-200,behavior:'smooth'});return false;" class="btn btn-ghost">Fill the form →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Waxioo</h3>
+        <p>Professional website design for service businesses in the USA, UK & Europe. Built to convert visitors into customers.</p>
+        <div style="display:flex;gap:.75rem;">
+          <a href="https://www.facebook.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Facebook</a>
+          <a href="https://www.instagram.com/waxiooo" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Instagram</a>
+          <a href="https://x.com/waxio0" target="_blank" rel="noopener" style="color:var(--muted);font-size:.85rem;">Twitter/X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services/">Services</a></li><li><a href="/contact/">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="/services/">Business Websites</a></li><li><a href="/services/">E-commerce Stores</a></li><li><a href="/services/">SEO Optimisation</a></li><li><a href="/services/">Hosting & Support</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul><li>📱 +44 7534 718384</li><li><a href="https://wa.me/447534718384" target="_blank" rel="noopener">WhatsApp Us</a></li><li><a href="/contact/">Send a message</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Waxioo. All rights reserved.</div>
+      <div>Professional Website Design & Development</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+
+    function closeMenu() {
+      if (menu) menu.classList.remove('active');
+    }
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (menu && toggle && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Form submit
+    function submitForm() {
+      const fname = document.getElementById('fname').value.trim();
+      const lname = document.getElementById('lname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const business = document.getElementById('business').value.trim();
+      const pkg = document.getElementById('package').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!fname || !email) { alert('Please fill in at least your name and email address.'); return; }
+
+      const text = [
+        `Hi! I just filled in the contact form on Waxioo.com 👋`,
+        ``,
+        `*Name:* ${fname} ${lname}`,
+        `*Email:* ${email}`,
+        phone ? `*Phone:* ${phone}` : null,
+        business ? `*Business:* ${business}` : null,
+        pkg ? `*Package:* ${pkg}` : null,
+        message ? `*Message:* ${message}` : null,
+      ].filter(Boolean).join('\n');
+
+      const waUrl = `https://wa.me/447534718384?text=${encodeURIComponent(text)}`;
+
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('active');
+
+      setTimeout(() => { window.open(waUrl, '_blank'); }, 400);
+    }
+  </script>
+</body>
+</html>
