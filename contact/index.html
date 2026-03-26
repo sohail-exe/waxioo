@@ -363,9 +363,9 @@
               <label for="package">Which package are you interested in?</label>
               <select id="package">
                 <option value="" disabled selected>Select a package…</option>
-                <option>Starter — $397 (3 pages)</option>
-                <option>Growth — $697 (5 pages) ⭐ Most Popular</option>
-                <option>Premium — $1,197 (7 pages + e-commerce)</option>
+                <option>Starter — £397 (3 pages)</option>
+                <option>Growth — £697 (5 pages) ⭐ Most Popular</option>
+                <option>Premium — £1,197 (7 pages + e-commerce)</option>
                 <option>Not sure yet — just exploring</option>
               </select>
             </div>
@@ -400,7 +400,7 @@
       <div class="trust-strip reveal">
         <div class="trust-item"><div class="trust-num">3</div><div class="trust-label">Days to build<br>your website</div></div>
         <div class="trust-item"><div class="trust-num">1hr</div><div class="trust-label">Average reply<br>time</div></div>
-        <div class="trust-item"><div class="trust-num">$397</div><div class="trust-label">Starting price,<br>no hidden fees</div></div>
+        <div class="trust-item"><div class="trust-num">£397</div><div class="trust-label">Starting price,<br>no hidden fees</div></div>
         <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Satisfaction<br>guarantee</div></div>
       </div>
     </div>
@@ -549,15 +549,15 @@
       const text = [
         `Hi! I just filled in the contact form on Waxioo.com 👋`,
         ``,
-        `*Name:* ${fname} ${lname}`,
-        `*Email:* ${email}`,
-        phone ? `*Phone:* ${phone}` : null,
-        business ? `*Business:* ${business}` : null,
-        pkg ? `*Package:* ${pkg}` : null,
-        message ? `*Message:* ${message}` : null,
+        `*Name:* £{fname} £{lname}`,
+        `*Email:* £{email}`,
+        phone ? `*Phone:* £{phone}` : null,
+        business ? `*Business:* £{business}` : null,
+        pkg ? `*Package:* £{pkg}` : null,
+        message ? `*Message:* £{message}` : null,
       ].filter(Boolean).join('\n');
 
-      const waUrl = `https://wa.me/447534718384?text=${encodeURIComponent(text)}`;
+      const waUrl = `https://wa.me/447534718384?text=£{encodeURIComponent(text)}`;
 
       document.getElementById('formContent').style.display = 'none';
       document.getElementById('formSuccess').classList.add('active');
